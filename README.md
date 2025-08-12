@@ -1,7 +1,7 @@
 <p align="center">
     <img src="figures/icon.PNG" width="120" style="margin-bottom: 0.2;"/>
 <p>
-<h2 align="center">HyperCounter: Cross-Modal Hypergraph Perception for RGB-T Crowd Counting</h2>
+<h2 align="center">HyperCounter: Cross-Modal Hypergraph Fusion for RGB-T Crowd Counting</h2>
 
 
 <p align="center">
