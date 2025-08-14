@@ -33,15 +33,44 @@ The RGBT-CC dataset contains annotations for 138,389 pedestrians across 2,030 pa
 [//]: # (![img.png]&#40;img.png&#41;)
 
 **Table 1. Comparison with other state-of-the-art methods on the RGBT-CC dataset.**
-<div> 
-    <img src="figures/comparison1.jpg" width="90%" height="90%">
-</div>
+| Method         | Venue    | Backbone        | GAME(0) | GAME(1) | GAME(2) | GAME(3) | RMSE  |
+|----------------|----------|-----------------|---------:|--------:|--------:|--------:|------:|
+| MMCCN          | ACCV'20  | ResNet-50       |   13.82 |   17.83 |   22.20 |   29.64 | 24.36 |
+| BBS-Net        | ECCV'20  | ResNet-50       |   19.56 |   25.07 |   31.25 |   39.24 | 32.48 |
+| BL+IADM        | CVPR'21  | VGG-19          |   15.61 |   19.95 |   24.69 |   32.89 | 28.18 |
+| BL+MAT         | ICME'22  | VGG-19          |   13.61 |   18.08 |   22.79 |   31.35 | 24.48 |
+| DEFNet         | ITS'22   | VGG-16          |   11.90 |   16.08 |   20.19 |   27.27 | 21.09 |
+| MSDTrans       | BMVC'22  | PoolFormer      |   10.90 |   14.81 |   19.02 |   26.14 | 18.79 |
+| MC3Net         | ITS'23   | ConvNext        |   11.47 |   15.06 |   19.40 |   27.95 | 20.59 |
+| CGINet         | EAAI'23  | ConvNext        |   12.07 |   15.98 |   20.06 |   27.73 | 20.54 |
+| MJPNet-T       | IoT'24   | SegFormer       |   11.56 |   16.36 |   20.95 |   28.91 | 17.83 |
+| MCN            | ESWA'24  | PoolFormer      |   11.56 |   15.92 |   20.16 |   28.06 | 19.02 |
+| GETANet        | GRSL'24  | PVT             |   12.14 |   15.98 |   19.40 |   28.61 | 22.17 |
+| BGDFNet        | TIM'24   | VGG-16          |   11.00 |   15.04 |   19.86 |   29.72 | 19.05 |
+| VPMFNet        | IoT'24   | VGG-16          |   10.99 |   15.17 |   20.07 |   28.03 | 19.61 |
+| BMCC           | ECCV'24  | VGG-19 & ViT    |   10.19 |   13.61 |   17.65 |   23.64 | 17.32 |
+| SAM-Guided     | ICMR'24  | SAM             |   10.51 |   14.52 |   18.92 |   26.28 | 17.71 |
+| CSCA           | PR'25    | VGG-19          |   13.50 |   18.63 |   23.59 |   31.59 | 24.83 |
+| MISF-Net       | TMM'25   | VGG-16          |   10.90 |   14.87 |   19.65 |   29.18 | 19.42 |
+| CMFX           | NN'25    | VGG-19          |   11.25 |   15.33 |   19.62 |   26.14 | 19.38 |
+| **HyperCounter** | -      | **PVT**         | **9.94** | **13.11** | **17.36** | **23.63** | **16.38** |
+
 
 
 **Table 2. Comparison with other state-of-the-art methods on the Drone-RGBT dataset.**
-<div>
-    <img src="figures/comparison2.jpg" width="90%" height="90%">
-</div>
+| Method        | Venue      | Backbone            | GAME(0) | GAME(1) | GAME(2) | GAME(3) | RMSE  |
+|---------------|------------|---------------------|--------:|--------:|--------:|--------:|------:|
+| CSRNet        | CVPR 2018  | VGG-16              |    8.91 |      -  |      -  |      -  | 13.80 |
+| MMCCN         | ACCV 2020  | ResNet-50           |   20.63 |   12.76 |   14.00 |   15.73 | 18.22 |
+| BL+IADM       | CVPR 2021  | VGG-19              |    9.77 |   12.91 |   17.08 |   22.61 | 15.76 |
+| DEFNet        | TITS 2022  | VGG-16              |   10.87 |      -  |      -  |      -  | 17.93 |
+| MC3Net        | TITS 2023  | ConvNext            |    7.33 |      -  |      -  |      -  | 11.17 |
+| CGINet        | EAAI 2023  | ConvNext            |    8.37 |    9.97 |   12.34 |   15.51 | 13.45 |
+| BMCC          | ECCV 2024  | VGG-19 & ViT        |    6.20 |      -  |      -  |      -  | 10.40 |
+| GETANet       | GRSL 2024  | PVT                 |    8.44 |   10.01 |   12.75 |   15.83 | 13.99 |
+| CSCA          | PR 2025    | VGG-19              |    9.51 |   12.12 |   15.84 |   21.57 | 15.19 |
+| CMFX          | NN 2025    | VGG-19              |    6.75 |    8.88 |   11.87 |   14.69 | 11.05 |
+| **HyperCounter** | -       | **PVT**             | **5.73**|**7.25** |**9.41** |**12.63**|**9.39** |
 
 <br> </br>
 
