@@ -1,11 +1,11 @@
 <p align="center">
     <img src="figures/icon.PNG" width="120" style="margin-bottom: 0.2;"/>
 <p>
-<h2 align="center">HyperCounter: Cross-Modal Hypergraph Fusion for RGB-T Crowd Counting</h2>
+<h2 align="center">Hyper-Counter: Cross-Modal Hypergraph Fusion for RGB-T Crowd Counting</h2>
 
 
 <p align="center">
-  Implementation of the paper "HyperCounter: Cross-Modal Hypergraph Fusion for RGB-T Crowd Counting".
+  Implementation of the paper "Hyper-Counter: Cross-Modal Hypergraph Fusion for RGB-T Crowd Counting".
 </p>
 
 
@@ -15,10 +15,10 @@
     <img src="figures/framework.jpg" width="96%" height="96%">
 </div>
 
-**Figure 1. The framework of the proposed HyperCounter.**
+**Figure 1. The framework of the proposed Hyper-Counter.**
 
 
-**_Abstract -_** In RGB-T crowd counting, the performance of existing methods is often constrained by two major challenges. On the one hand, the inherent spatial misalignment between RGB and thermal infrared images makes cross-modal feature alignment and fusion extremely difficult. On the other hand, effectively integrating the complementary semantic information from both modalities and capturing their complex high-order associations remains a significant challenge. To address these issues, we propose a novel framework based on cross-modal hypergraph fusion (HyperCounter), which for the first time introduces hypergraph learning into RGB-T cross-modal fusion. Specifically, we utilize parallel Transformer backbones to extract multi-scale features and employ convolutional blocks to preliminarily fuse the features from both modalities into joint features. Subsequently, we design a cross-modal hypergraph perception module (CroM-HP), where feature patches are treated as vertices, and a cross-modal hypergraph is constructed based on the joint and cross-modal features. Hypergraph neural networks are then used to achieve efficient semantic information interaction and fusion. Through CroM-HP, the model can associate corresponding regions across modalities in a spatially flexible manner and fully understand the intricate complementary semantic correlations. Moreover, a pyramid structure is adopted in the multi-level CroM-HPs to achieve cross-scale semantic transmission. Experiments on two widely used datasets, RGBT-CC and Drone-RGBT, demonstrate that our framework achieves the best performance, significantly outperforming previous methods. In particular, compared to the second-place method on the Drone-RGBT dataset, HyperCounter improves the GAME(0) and RMSE metrics by 7.58\% and 9.71\%, respectively.
+**_Abstract -_** In RGB-T crowd counting, the performance of existing methods is often constrained by two major challenges. On the one hand, the inherent spatial misalignment between RGB and thermal infrared images makes cross-modal feature alignment and fusion extremely difficult. On the other hand, effectively integrating the complementary semantic information from both modalities and capturing their complex high-order associations remains a significant challenge. To address these issues, we propose a novel framework based on cross-modal hypergraph fusion (Hyper-Counter), which for the first time introduces hypergraph learning into RGB-T cross-modal fusion. Specifically, we utilize parallel Transformer backbones to extract multi-scale features and employ convolutional blocks to preliminarily fuse the features from both modalities into joint features. Subsequently, we design a cross-modal hypergraph perception module (CroM-HP), where feature patches are treated as vertices, and a cross-modal hypergraph is constructed based on the joint and cross-modal features. Hypergraph neural networks are then used to achieve efficient semantic information interaction and fusion. Through CroM-HP, the model can associate corresponding regions across modalities in a spatially flexible manner and fully understand the intricate complementary semantic correlations. Moreover, a pyramid structure is adopted in the multi-level CroM-HPs to achieve cross-scale semantic transmission. Experiments on two widely used datasets, RGBT-CC and Drone-RGBT, demonstrate that our framework achieves the best performance, significantly outperforming previous methods. In particular, compared to the second-place method on the Drone-RGBT dataset, Hyper-Counter improves the GAME(0) and RMSE metrics by 7.58\% and 9.71\%, respectively.
 
 ## Datasets📚
 
@@ -53,7 +53,7 @@ The RGBT-CC dataset contains annotations for 138,389 pedestrians across 2,030 pa
 | CSCA           | PR'25    | VGG-19          |   13.50 |   18.63 |   23.59 |   31.59 | 24.83 |
 | MISF-Net       | TMM'25   | VGG-16          |   10.90 |   14.87 |   19.65 |   29.18 | 19.42 |
 | CMFX           | NN'25    | VGG-19          |   11.25 |   15.33 |   19.62 |   26.14 | 19.38 |
-| **HyperCounter** | -      | **PVT**         | **9.94** | **13.11** | **17.36** | **23.63** | **16.38** |
+| **Hyper-Counter** | -      | **PVT**         | **9.94** | **13.11** | **17.36** | **23.63** | **16.38** |
 
 
 
@@ -70,7 +70,7 @@ The RGBT-CC dataset contains annotations for 138,389 pedestrians across 2,030 pa
 | GETANet       | GRSL 2024  | PVT                 |    8.44 |   10.01 |   12.75 |   15.83 | 13.99 |
 | CSCA          | PR 2025    | VGG-19              |    9.51 |   12.12 |   15.84 |   21.57 | 15.19 |
 | CMFX          | NN 2025    | VGG-19              |    6.75 |    8.88 |   11.87 |   14.69 | 11.05 |
-| **HyperCounter** | -       | **PVT**             | **5.73**|**7.25** |**9.41** |**12.63**|**9.39** |
+| **Hyper-Counter** | -       | **PVT**             | **5.73**|**7.25** |**9.41** |**12.63**|**9.39** |
 
 <br> </br>
 
