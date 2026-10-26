@@ -5,7 +5,7 @@
 
 
 <p align="center">
-  <strong>🔥 Our paper has been accepted to TPAMI!</strong>
+  <strong>🔥 Oct. 2026: Our paper has been accepted to TPAMI!</strong>
 </p>
 
 
