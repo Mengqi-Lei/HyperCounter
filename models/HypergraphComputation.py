@@ -43,6 +43,7 @@ class DilatedConv(nn.Module):
         return output  
 
 
+@torch.no_grad()
 def build_interaction_hyperedges_knn(
     X_target: torch.Tensor,
     X_context: torch.Tensor,
@@ -52,18 +53,16 @@ def build_interaction_hyperedges_knn(
     N_t = X_target.size(0)
     N_c = X_context.size(0)
 
-    distance_mat = torch.cdist(X_target, X_context)  # [N_t, N_c]
-    _, knn_idx = torch.topk(distance_mat, k=k, dim=1, largest=False)  # [N_t, k]
+    distance_mat = torch.cdist(X_target, X_context)
+    _, knn_idx = torch.topk(distance_mat, k=k, dim=1, largest=False)
 
     H = torch.zeros(N_t + N_c, N_t, dtype=torch.float32, device=X_target.device)
-
-    for i in range(N_t):
-        H[i, i] = 1.0
-        selected_context_nodes = knn_idx[i] + N_t
-        H[selected_context_nodes, i] = 1.0
+    H[:N_t].diagonal().fill_(1.0)
+    H[N_t:].scatter_(0, knn_idx.T, 1.0)
 
     return H
 
+@torch.no_grad()
 def build_interaction_hyperedges_thresh(
     X_target: torch.Tensor,
     X_context: torch.Tensor,
@@ -73,18 +72,17 @@ def build_interaction_hyperedges_thresh(
     N_t = X_target.size(0)
     N_c = X_context.size(0)
 
-    sim_mat = F.cosine_similarity(
-        X_target.unsqueeze(1),  
-        X_context.unsqueeze(0), 
-        dim=2
-    )  
-
     H = torch.zeros(N_t + N_c, N_t, dtype=torch.float32, device=X_target.device)
+    H[:N_t].diagonal().fill_(1.0)
 
-    for i in range(N_t):
-        H[i, i] = 1.0
-        selected_ctx = torch.nonzero(sim_mat[i] > thresh, as_tuple=False).flatten()
-        H[selected_ctx + N_t, i] = 1.0
+    for start in range(0, N_t, 64):
+        end = min(start + 64, N_t)
+        sim_mat = F.cosine_similarity(
+            X_target[start:end].unsqueeze(1),
+            X_context.unsqueeze(0),
+            dim=2
+        )
+        H[N_t:, start:end] = (sim_mat > thresh).T
 
     return H
 
