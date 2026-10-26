@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 from functools import partial
-from timm.models.layers import DropPath, to_2tuple, trunc_normal_
-from mmcv.runner import load_checkpoint
+from collections import OrderedDict
+from timm.layers import DropPath, to_2tuple, trunc_normal_
 import math
 
 class Mlp(nn.Module):
@@ -355,7 +355,16 @@ class PyramidVisionTransformerV2(nn.Module):
 
     def init_weights(self, pretrained=None):
         if isinstance(pretrained, str):
-            load_checkpoint(self, pretrained, map_location='cpu', strict=False)
+            checkpoint = torch.load(pretrained, map_location='cpu', weights_only=True)
+            if not isinstance(checkpoint, dict):
+                raise RuntimeError(f'No state_dict found in checkpoint file {pretrained}')
+            state_dict = checkpoint.get('state_dict', checkpoint)
+            metadata = getattr(state_dict, '_metadata', None)
+            state_dict = OrderedDict((key.removeprefix('module.'), value)
+                                     for key, value in state_dict.items())
+            if metadata is not None:
+                state_dict._metadata = metadata
+            self.load_state_dict(state_dict, strict=False)
 
     def freeze_patch_emb(self):
         self.patch_embed1.requires_grad = False

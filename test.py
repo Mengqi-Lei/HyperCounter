@@ -52,7 +52,7 @@ if __name__ == '__main__':
     
     model.to(device)
     model_path = args.model_path
-    checkpoint = torch.load(model_path, device)
+    checkpoint = torch.load(model_path, device, weights_only=True)
     model.load_state_dict(checkpoint)
     model.eval()
 

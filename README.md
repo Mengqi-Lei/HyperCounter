@@ -152,19 +152,20 @@ Drone_RGBT
 ```
 ### 2. Environment Setup
 
-Detailed requirements are provided in the `requirements.txt` file.
-The core libraries are as follows:
-```text
-torch: 1.11.0+cu113
-torchvision: 0.12.0+cu113
-timm: 1.0.12
-mmcv-full: 1.7.2
-mmdet: 3.3.0 (dev)
-mmengine: 0.10.5
-numpy: 1.22.4
-scipy: 1.10.1
-scikit-learn: 1.3.2
+Use Python 3.12 and an NVIDIA GPU for training and evaluation. Install the dependencies in a dedicated environment:
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
 ```
+
+The PyTorch CUDA build must be compatible with your NVIDIA driver. For a different CUDA build, follow the [official PyTorch installation instructions](https://pytorch.org/get-started/locally/) before installing `requirements.txt`.
+
+The runtime dependencies are PyTorch, torchvision, timm, NumPy, OpenCV, and Pillow. Their versions are specified in `requirements.txt`. Model checkpoints should contain tensor state dictionaries; training-resume checkpoints also contain the optimizer state and epoch.
+
+For dependency checks, install `requirements-dev.txt`, then run `python -m unittest discover -s tests -v` and `python -m pip_audit --strict`.
 
 ### 3. Training
 
