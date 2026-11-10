@@ -5,7 +5,7 @@
 
 
 <p align="center">
-  <strong>🔥 Oct. 2026: Our paper has been accepted to TPAMI!</strong>
+  <strong>🔥 Oct. 2026: Our <a href="https://ieeexplore.ieee.org/abstract/document/11776022">🔗paper</a> has been accepted to TPAMI!</strong>
 </p>
 
 
