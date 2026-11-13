@@ -194,7 +194,14 @@ bash test.sh
 
 ## Cite our work📝
 ```bibtex
-Coming soon...
+@ARTICLE{lei2026hypercounter,
+  author={Lei, Mengqi and Li, Siqi and Zheng, Xinhu and Ma, Nan and Wu, Zongze and Du, Shaoyi and Gao, Yue},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={Hyper-Counter: Cross-Modal Hypergraph Fusion for RGB-T Crowd Counting}, 
+  year={2026},
+  pages={1-14},
+  doi={10.1109/TPAMI.2026.3751067}
+}
 ```
 
 ## License📜
