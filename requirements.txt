@@ -1,6 +1,6 @@
-torch==2.14.1
-torchvision==0.29.1
-timm==1.0.30
+torch==2.15.0
+torchvision==0.29.2
+timm==1.0.31
 numpy==2.5.4
 opencv-python==5.0.0.93
 Pillow==13.0.0
